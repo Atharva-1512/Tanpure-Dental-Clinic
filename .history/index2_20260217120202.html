@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanpure Dental Clinic | Advanced Orthodontic Care in Wakad, Pune</title>
+    <meta name="description" content="Expert orthodontic care by Dr. Saurabh Tanpure & Dr. Pranoti Gade-Tanpure. Invisible braces, dental implants, and painless treatments in Wakad, Pune.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+   <style>
+:root{
+  --primary:#E8D8C3;
+  --accent:#C9A97F;
+  --dark:#2C2419;
+  --light:#FDFCFA;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Lato',sans-serif;background:var(--light);color:var(--dark);overflow-x:hidden;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;}
+section{padding:80px 20px;max-width:1200px;margin:auto;}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+header{
+  position:fixed;top:0;left:0;right:0;
+  background:#fff;
+  box-shadow:0 2px 20px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 1.5rem;
+}
+.logo{font-size:1.6rem;font-weight:700;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.95rem;}
+.cta{background:var(--accent);color:white;padding:.6rem 1.4rem;border-radius:30px;}
+
+.mobile-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;}
+.mobile-toggle span{width:25px;height:2px;background:var(--dark);}
+
+/* HERO */
+.hero{
+  padding-top:120px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+.hero h1{font-size:3rem;margin-bottom:15px;}
+.hero-buttons{margin-top:25px;display:flex;gap:15px;}
+.btn{
+  padding:.8rem 1.8rem;
+  border-radius:30px;
+  display:inline-block;
+}
+.btn-primary{background:var(--accent);color:white;}
+.btn-secondary{border:2px solid var(--accent);}
+.hero img{
+  width:100%;
+  border-radius:15px;
+}
+
+/* CAROUSEL */
+.carousel{margin-top:50px;overflow:hidden;border-radius:15px;}
+.track{display:flex;transition:.5s;}
+.slide{min-width:100%;}
+.slide img{width:100%;height:350px;object-fit:cover;}
+
+/* GRID */
+.grid{display:grid;gap:30px;}
+.doctors{grid-template-columns:repeat(2,1fr);}
+.card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.05);
+  text-align:center;
+}
+.card img{width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:15px;}
+
+/* SERVICES */
+.services{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.service-detail{max-height:0;overflow:hidden;transition:.4s;}
+.service.active .service-detail{max-height:300px;margin-top:10px;}
+
+/* CONTACT */
+.contact{grid-template-columns:1fr 1fr;}
+iframe{width:100%;height:350px;border:0;border-radius:15px;}
+
+/* FOOTER */
+footer{
+  background:var(--dark);
+  color:white;
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;bottom:20px;right:20px;
+  background:#25D366;color:white;
+  width:55px;height:55px;border-radius:50%;
+  display:flex;justify-content:center;align-items:center;
+  font-size:22px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .nav-links{
+    position:fixed;top:70px;left:-100%;
+    flex-direction:column;
+    background:white;width:100%;
+    padding:2rem;
+    text-align:center;
+    transition:.3s;
+  }
+  .nav-links.active{left:0;}
+  .mobile-toggle{display:flex;}
+
+  .hero{grid-template-columns:1fr;text-align:center;}
+  .hero-buttons{flex-direction:column;align-items:center;}
+  .doctors,.contact{grid-template-columns:1fr;}
+  .slide img{height:220px;}
+}
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Tanpure <span>Dental</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#services">Treatments</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#invisalign" class="cta-button">🦷Invisalign</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Tanpure Dental Clinic</h1>
+                <p class="hero-tagline">Your Smile, Our Priority</p>
+                <p class="hero-highlight">ADVANCED • AFFORDABLE • GENTLE CARE</p>
+                <div class="hero-buttons">
+                    <a href="#appointment" class="btn-primary">Book Appointment</a>
+                    <a href="tel:9270757455" class="btn-secondary">Call Now</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-placeholder">
+                    <!-- 
+                    ✅ REPLACE THIS: Add your clinic's hero image here
+                    Recommended: Happy patient smiling, dental clinic exterior, or dentist with patient
+                    Size: 600x500px or larger, JPG/PNG format
+                    -->
+                    <img src="images/logo.jpeg" alt="Tanpure Dental Clinic">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel Banner -->
+<section class="carousel-banner">
+  <div class="carousel-container">
+    <button class="carousel-arrow left-arrow" id="prevBtn">
+      <span>&#8249;</span>
+    </button>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="./images/banner1.png" alt="Dental Service 1">
+          
+        </div>
+        
+        <div class="carousel-slide">
+          <img src="./images/banner2.png" alt="Dental Service 2">
+          
+        </div>
+        
+        <div class="carousel-slide">
+          <img src="./images/banner3.png" alt="Dental Service 3">
+          
+        </div>
+        
+        <div class="carousel-slide">
+          <img src="./images/banner4.png" alt="Dental Service 4">
+          
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-arrow right-arrow" id="nextBtn">
+      <span>&#8250;</span>
+    </button>
+    
+    <!-- Dot indicators -->
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2 class="section-title">Welcome to Excellence in Dental Care</h2>
+            <p class="section-subtitle">Modern Equipment • Painless Treatments • Family Care</p>
+        </div>
+        <div class="about-content">
+            At Tanpure Dental Clinic, we blend cutting-edge dental technology with compassionate care to create beautiful, healthy smiles. Our state-of-the-art facility in Wakad, Pune, is equipped with the latest digital X-ray systems, advanced scanners, and modern treatment equipment. Specializing in orthodontics, we offer painless treatments tailored for patients of all ages. From routine cleanings to complex dental implants, our expert team ensures your dental experience is comfortable, efficient, and focused on achieving optimal oral health. We believe every smile tells a story, and we're here to make yours extraordinary.
+        </div>
+    </section>
+    
+<section class="invisalign-section" id="invisalign">
+  <div class="container invisalign-wrapper">
+
+    <!-- LEFT SIDE : QR + TEXT -->
+    <div class="left-content">
+      <div class="qr-container">
+        <img src="./images/smile-makeover.jpeg" alt="Scan for Smile Makeover" class="qr-image">
+      </div>
+
+      <div class="text-content">
+        <h3>See real smile makeover in seconds – just scan</h3>
+        <h2>Your Smile, Our Priority</h2>
+        <p>Premium dental solutions designed for your comfort and confidence.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE : VIDEO PLACEHOLDER -->
+<div class="right-content">
+  <div class="video-placeholder">
+    <video autoplay loop muted playsinline poster="./images/video-thumbnail.jpg">
+      <source src="./images/video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+</div>
+</section>
+
+
+
+
+  <!-- ================= INVISALIGN PROMO ================= -->
+
+  <section class="invisalign reveal" id="about">
+  <div class="invisalign-content">
+    <div class="invisalign-image">
+      <img src="./images/invisalign-img.png" alt="Invisalign Treatment" class="invisalign-img">
+    </div>
+    <p id="inviprice">Invisalign Treatment with <b>₹3,499*</b> per tray onwards</p>
+    <p class="invisalign-description">
+      Get the smile you've always wanted with clear, comfortable aligners. 
+      Affordable pricing and flexible payment options available.
+    </p>
+    
+  </div>
+</section>
+
+
+
+    <!-- Doctors Section -->
+    <section id="doctors">
+        <div class="section-header">
+            <h2 class="section-title">Meet Our Expert Orthodontists</h2>
+            <p class="section-subtitle">Experienced • Certified • Compassionate</p>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <!-- 
+                    ✅ REPLACE THIS: Dr. Saurabh Tanpure's professional photo
+                    Recommended: Professional headshot with white coat
+                    Size: 400x400px (square), JPG/PNG format
+                    -->
+                    <img src="images/10.jpeg" alt="Dr. Saurabh Tanpure">
+                </div>
+                <h3 class="doctor-name">Dr. Saurabh Tanpure</h3>
+                <p class="doctor-credentials">BDS, MDS (Orthodontics)</p>
+                <p class="doctor-specialty">Specialist in Orthodontics & Dentofacial Orthopedics</p>
+                <p class="doctor-bio">With years of dedicated practice in orthodontics, Dr. Saurabh brings precision and artistry to every smile transformation. His expertise in invisible braces and advanced alignment techniques has helped thousands of patients achieve their dream smiles with confidence and comfort.</p>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <!-- 
+                    ✅ REPLACE THIS: Dr. Pranoti Gade-Tanpure's professional photo
+                    Recommended: Professional headshot with white coat
+                    Size: 400x400px (square), JPG/PNG format
+                    -->
+                    <img src="images/11.jpeg" alt="Dr. Pranoti Gade-Tanpure">
+                </div>
+                <h3 class="doctor-name">Dr. Pranoti Gade-Tanpure</h3>
+                <p class="doctor-credentials">BDS, MDS (Orthodontics)</p>
+                <p class="doctor-specialty">Specialist in Orthodontics & Aesthetic Dentistry</p>
+                <p class="doctor-bio">Dr. Pranoti combines clinical excellence with a gentle approach, making even the most anxious patients feel at ease. Her passion for smile designing and child dentistry ensures that every family member receives personalized, compassionate care tailored to their unique needs.</p>
+            </div>
+        </div>
+    </section>
+
+      <!-- Specialist Dropdown
+  <div class="specialist">
+    <button class="specialist-btn">Specialist Team ▼</button>
+    <div class="specialist-list">
+      <p>• Pediatric Dentist</p>
+      <p>• Root Canal Specialist</p>
+      <p>• Cosmetic Dentist</p>
+      <p>• Oral Surgeon</p>
+    </div>
+  </div>
+</section> -->
+
+<!-- ================= SERVICES ================= -->
+<section class="services reveal" id="services">
+  <h2>Our Premium Services</h2>
+
+  <div class="services-grid">
+
+    <!-- Service 1 -->
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-image">
+        <img src="./images/download.jpeg" alt="General Dentistry">
+      </div>
+      <div class="service-content">
+        <h3>Orthodontic Care</h3>
+        <p>Comprehensive care for overall oral health</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          We provide comprehensive orthodontic care for children, teens, and adults, including braces, clear aligners, and correction of crowded or misaligned teeth. Our clinic has an in-house orthodontic specialist available on scheduled days, ensuring smooth appointment planning and faster treatment progress. With no external referrals required, patients enjoy convenient scheduling, consistent follow-ups, and personalized care under one roof.
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-image">
+        <img src="images/smile-designing.jpeg" alt="Cosmetic Dentistry">
+      </div>
+      <div class="service-content">
+        <h3>Smile Designing</h3>
+        <p>Customized cosmetic enhancement for perfect smiles</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          Smile designing is a cosmetic dental procedure that focuses on enhancing the appearance of a person’s smile through customized treatment planning. It involves analyzing facial features, tooth shape, size, color, alignment, and gum structure to create a balanced and attractive smile. Treatments may include teeth whitening, veneers, braces, aligners, gum contouring, or crowns, depending on the patient’s needs. Smile designing combines dental science with artistic precision to ensure natural-looking results. The goal is not only to improve aesthetics but also to maintain proper function and oral health. With personalized planning, smile designing helps boost confidence and create a harmonious, beautiful smile.
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-image">
+        <img src="images/Teeth-Cleaning.jpeg" alt="Orthodontics">
+      </div>
+      <div class="service-content">
+        <h3>Teeth Cleaning</h3>
+        <p>Professional plaque and tartar removal</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          Teeth cleaning, also known as professional dental scaling and polishing, is a preventive procedure that removes plaque, tartar, and surface stains from the teeth. Even with regular brushing and flossing, some deposits can build up over time, leading to cavities, gum disease, and bad breath. During the procedure, a dentist or hygienist carefully cleans around the teeth and gum line to maintain healthy gums and prevent infection. Polishing helps smooth the tooth surface and restore natural shine. Regular teeth cleaning, usually recommended every six months, plays a vital role in maintaining oral hygiene, preventing dental problems, and keeping your smile fresh, bright, and healthy.
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Service 5 -->
+    <div class="service-card reveal reveal-delay-5">
+      <div class="service-image">
+        <img src="images/root-canal.png" alt="Root Canal Treatment">
+      </div>
+      <div class="service-content">
+        <h3>Root Canal Treatment</h3>
+        <p>Pain relief and infected tooth treatment</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          Root Canal Treatment (RCT) is a dental procedure used to treat infected or severely decayed teeth while preserving the natural tooth structure. When the inner pulp of the tooth becomes infected due to deep cavities, cracks, or trauma, it can cause severe pain and swelling. During RCT, the dentist carefully removes the infected pulp, cleans and disinfects the root canals, and then fills and seals them to prevent further infection. Finally, a crown is usually placed to restore strength and function. RCT helps eliminate pain, save the natural tooth, and restore normal chewing ability, ensuring long-term oral health and comfort.
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-card reveal reveal-delay-6">
+      <div class="service-image">
+        <img src="images/emergency-care.png" alt="Emergency Care">
+      </div>
+      <div class="service-content">
+        <h3>Emergency Care</h3>
+        <p>Immediate treatment for urgent dental issues</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          Emergency dental care provides immediate treatment for urgent oral health problems that require quick attention to relieve pain and prevent further damage. It includes managing severe toothaches, broken or knocked-out teeth, swelling, infections, bleeding gums, and dental trauma caused by accidents. Prompt treatment can save a natural tooth and stop complications from spreading. The dentist first diagnoses the issue, controls pain, and stabilizes the condition before recommending further treatment if needed. Emergency care ensures patient comfort, prevents worsening of the problem, and protects overall oral health. Quick professional intervention can make a significant difference in preserving your smile and avoiding long-term dental issues.
+
+        </div>
+      </div>
+    </div>
+    <!-- Service 7 -->
+    <div class="service-card reveal reveal-delay-4">
+      <div class="service-image">
+        <img src="images/Tooth-Extraction.jpeg" alt="Dental Implants">
+      </div>
+      <div class="service-content">
+        <h3>Tooth Extraction</h3>
+        <p>Safe removal of damaged teeth</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          Tooth extraction is a dental procedure performed to remove a damaged, decayed, or problematic tooth that cannot be saved through other treatments. It may be necessary in cases of severe infection, advanced gum disease, overcrowding, or impacted wisdom teeth. The procedure is carried out under local anesthesia to ensure comfort and minimal pain. After removal, the dentist provides proper care instructions to promote healing and prevent complications. In many cases, replacement options such as dental implants, bridges, or partial dentures are recommended to restore function and maintain proper alignment. Tooth extraction helps relieve pain, prevent infection spread, and protect overall oral health.
+
+        </div>
+      </div>
+    </div>
+    <!-- Service 8 -->
+    <div class="service-card reveal reveal-delay-6">
+      <div class="service-image">
+        <img src="images/crown.jpeg" alt="Emergency Care">
+      </div>
+      <div class="service-content">
+        <h3>Crown & Bridge</h3>
+        <p>Restore strength and replace missing teeth</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          Crowns and bridges are restorative dental treatments used to repair and replace damaged or missing teeth. A dental crown is a custom-made cap placed over a weakened or broken tooth to restore its shape, strength, and appearance. It protects the tooth after procedures like root canal treatment or large fillings. A dental bridge, on the other hand, is used to replace one or more missing teeth by anchoring an artificial tooth to the neighboring natural teeth or implants. Both crowns and bridges are designed to look natural and blend seamlessly with your smile. They help restore proper chewing function, maintain alignment, and improve overall oral health and confidence.
+
+        </div>
+      </div>
+    </div>
+    <!-- Service 9 -->
+    <div class="service-card reveal reveal-delay-6">
+      <div class="service-image">
+        <img src="images/Dentures.jpeg" alt="Emergency Care">
+      </div>
+      <div class="service-content">
+        <h3>Dentures</h3>
+        <p>Removable replacement for missing teeth</p>
+        <button class="service-toggle">▼</button>
+        <div class="service-detail">
+          Dentures are removable dental appliances used to replace missing teeth and restore oral function and appearance. They are custom-made to fit comfortably over the gums and can replace a few missing teeth (partial dentures) or an entire arch (complete dentures). Dentures help improve chewing ability, speech clarity, and facial structure by supporting the lips and cheeks. Modern dentures are designed to look natural and provide a comfortable fit. Proper care and regular dental check-ups are essential to maintain their durability and hygiene. Dentures offer an affordable and effective solution for restoring confidence, functionality, and a complete, healthy-looking smile.
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ================= RESULTS ================= -->
+<!-- <section class="results reveal">
+  <section class="results" id="results"></section>
+  <h2>Our Results Speak</h2>
+
+  <div class="results-grid">
+    <div class="result-card reveal">
+  <div class="before-after-container">
+    
+    <img src="https://via.placeholder.com/600x400?text=After" class="after-img">
+    
+    <div class="before-img-wrapper">
+      <img src="https://via.placeholder.com/600x400?text=Before" class="before-img">
+    </div>
+
+    <div class="slider-handle"></div>
+
+  </div>
+  <p>Smile Correction Treatment</p>
+</div>
+
+    <div class="result-card reveal reveal-delay-2">
+      <div class="before-after">
+        Before / After
+      </div>
+      <p>Teeth Whitening</p>
+    </div>
+
+    <div class="result-card reveal reveal-delay-3">
+      <div class="before-after">
+        Before / After
+      </div>
+      <p>Braces Alignment</p>
+    </div>
+
+    <div class="result-card reveal reveal-delay-4">
+      <div class="before-after">
+        Before / After
+      </div>
+      <p>Dental Implants</p>
+    </div>
+  </div>
+</section> -->
+
+    <!-- Why Choose Us -->
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">Why Choose Tanpure Dental</h2>
+            <p class="section-subtitle">Excellence in every aspect of dental care</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3 class="feature-title">Advanced Equipment</h3>
+                <p class="feature-description">State-of-the-art digital technology and modern dental equipment for precise, efficient treatments</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💆</div>
+                <h3 class="feature-title">Gentle & Painless</h3>
+                <p class="feature-description">Modern techniques and sedation options ensure comfortable, anxiety-free dental experiences</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚨</div>
+                <h3 class="feature-title">Emergency Care</h3>
+                <p class="feature-description">Available for urgent dental issues with prompt, professional attention when you need it most</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">Affordable Plans</h3>
+                <p class="feature-description">Flexible payment options and transparent pricing for quality dental care within your budget</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">Our Clinic Gallery</h2>
+            <p class="section-subtitle">A glimpse into our modern facility</p>
+        </div>
+        <div class="gallery-grid">
+            <!-- 
+            ✅ REPLACE ALL 6 GALLERY IMAGES BELOW
+            Recommended images:
+            1. Treatment room/dental chair
+            2. Dental equipment/tools
+            3. Clear aligners/braces
+            4. Dental implant model
+            5. Happy patients (before/after)
+            6. Clinic reception/waiting area
+            Size: 600x400px, JPG/PNG format
+            -->
+            <div class="gallery-item">
+                <img src="images/1.jpeg" alt="Chair">
+            </div>
+            <div class="gallery-item">
+                <img src="images/2.jpeg" alt="Doctors">
+            </div>
+            <div class="gallery-item">
+                <img src="images/3.jpeg" alt="Opening">
+            </div>
+            <div class="gallery-item">
+                <img src="images/4.jpeg" alt="Dental implant model">
+            </div>
+            
+            
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment">
+        <div class="section-header">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <p class="section-subtitle">Take the first step towards your perfect smile</p>
+        </div>
+        <div class="appointment-section">
+            <form class="appointment-form" onsubmit="handleAppointment(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="treatment">Treatment Needed</label>
+                    <select id="treatment" name="treatment" required>
+                        <option value="">Select a treatment</option>
+                        <option value="invisible-braces">Invisible Braces (Clear Aligners)</option>
+                        <option value="metal-ceramic-braces">Metal & Ceramic Braces</option>
+                        <option value="smile-designing">Smile Designing</option>
+                        <option value="teeth-cleaning">Teeth Cleaning & Polishing</option>
+                        <option value="filling-rct">Tooth Filling & Root Canal</option>
+                        <option value="crown-bridge">Crown & Bridge</option>
+                        <option value="dental-implants">Dental Implants</option>
+                        <option value="extraction">Tooth Extraction</option>
+                        <option value="kids-dentistry">Kids Dentistry</option>
+                        <option value="gum-treatment">Gum Treatment</option>
+                        <option value="dentures">Complete/Partial Denture</option>
+                        <option value="emergency">Emergency Dental Care</option>
+                        <option value="consultation">General Consultation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Message (Optional)</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your dental concerns"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials reveal" id="testimonials">
+  <h2>What Our Patients Say</h2>
+
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track">
+
+      <div class="testimonial-card">
+        <p>"The clinic maintains excellent hygiene and uses advanced technology for Invisalign treatment. The entire team was friendly and professional. My treatment was smooth, painless, and well-guided at every step. I’m already seeing great results, and my confidence has increased significantly."</p>
+        <h4>– Sunil Deshmukh</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="testimonial-card">
+        <p>""I had an amazing experience at this dental clinic for my Invisalign treatment. The doctors explained everything clearly and made me feel comfortable throughout the process. The aligners were convenient and nearly invisible. My teeth alignment has improved beautifully, and I couldn’t be happier with my new smile."</p>
+        <h4>– Om Kale</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="testimonial-card">
+        <p>"I was nervous about correcting my crowded teeth, but choosing Invisalign here was the best decision. The doctors were patient and supportive, answering all my doubts. The aligners fit perfectly and were easy to maintain. Highly recommend this clinic for orthodontic care."</p>
+        <h4>– Deepak Wankhede</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="testimonial-card">
+        <p>"Outstanding service and care! The Invisalign treatment plan was customized according to my smile goals. The progress reviews were thorough and reassuring. The staff always made appointments comfortable and stress-free. I’m extremely satisfied with both the results and overall experience."</p>
+        <h4>– Sumit Yeole</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="testimonial-card">
+        <p>"This clinic truly focuses on patient comfort and precision. My Invisalign journey was smooth, and the aligners were barely noticeable. The results are natural and impressive. I appreciate the regular follow-ups and professional guidance throughout the treatment."</p>
+        <h4>– Arsh Gandhewar</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+            
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Get answers to common dental queries</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How long does orthodontic treatment with braces take?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    The duration of orthodontic treatment typically ranges from 12 to 24 months, depending on the complexity of your case. Invisible braces (clear aligners) may take 6-18 months for mild to moderate cases. During your consultation, our orthodontists will provide a personalized timeline based on your specific needs and goals.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is root canal treatment painful?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Modern root canal treatments are virtually painless! We use advanced local anesthesia and gentle techniques to ensure your comfort throughout the procedure. Most patients report that root canal therapy is no more uncomfortable than getting a regular filling. We also offer sedation options for anxious patients.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What makes dental implants better than dentures?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Dental implants are permanent tooth replacements that fuse with your jawbone, providing stability, natural appearance, and functionality similar to real teeth. Unlike dentures, implants don't slip, require no special maintenance beyond regular brushing, preserve jawbone health, and can last a lifetime with proper care. They're the closest thing to natural teeth.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How often should I get my teeth professionally cleaned?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We recommend professional teeth cleaning every 6 months for most patients. However, if you have gum disease, heavy plaque buildup, or other oral health concerns, you may benefit from more frequent cleanings (every 3-4 months). Regular cleanings prevent cavities, gum disease, and keep your smile bright and healthy.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you provide emergency dental services?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We provide emergency dental care for urgent issues like severe toothaches, broken teeth, knocked-out teeth, and dental infections. Call us immediately at 9270757455 or 8087427455 if you have a dental emergency. We prioritize emergency cases and will accommodate you as quickly as possible.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Visit Us Today</h2>
+            <p class="section-subtitle">We're here to help you achieve your perfect smile</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h4>Address</h4>
+                        <p>B-06, Sonigara Landmark,<br>Chhatrapati Chowk Road,<br>Kaspate Wasti, Wakad,<br>Pune, Maharashtra</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h4>Phone</h4>
+                        <p><a href="tel:9270757455">9270757455</a><br><a href="tel:8087427455">8087427455</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🕐</div>
+                    <div class="info-content">
+                        <h4>Clinic Timings</h4>
+                        <p>Morning: 10:00 AM - 2:00 PM<br>Evening: 5:00 PM - 10:00 PM<br>Open 7 days a week<br>Emergency Care available 24*7</p>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📘</a>
+                    <a href="#" class="social-icon">📸</a>
+                    <a href="#" class="social-icon">▶️</a>
+                    <a href="#" class="social-icon">🐦</a>
+                </div>
+            </div>
+            <div class="map-container">
+                <!-- 
+                ✅ REPLACE THIS: Add Google Maps embed
+                Steps to get your Google Maps embed:
+                1. Go to Google Maps (maps.google.com)
+                2. Search for: "B-06, Sonigara Landmark, Chhatrapati Chowk Road, Kaspate Wasti, Wakad, Pune"
+                3. Click "Share" button
+                4. Click "Embed a map" tab
+                5. Copy the iframe code
+                6. Paste it below (replace the commented iframe)
+                -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5771.551357039317!2d73.77106239691751!3d18.596498371709856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b90048f2ec4f%3A0xd58d755c558a80de!2sTanpure%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1771308299395!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tanpure Dental</h3>
+                <p>Your trusted partner in achieving and maintaining optimal oral health with advanced, affordable, and gentle dental care.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#treatments">Treatments</a></p>
+                <p><a href="#appointment">Book Appointment</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Treatments</h3>
+                <p><a href="#treatments">Invisible Braces</a></p>
+                <p><a href="#treatments">Dental Implants</a></p>
+                <p><a href="#treatments">Smile Designing</a></p>
+                <p><a href="#treatments">Root Canal</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>B-06, Sonigara Landmark<br>Wakad, Pune</p>
+                <p><a href="tel:9270757455">9270757455</a></p>
+                <p><a href="tel:8087427455">8087427455</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tanpure Dental Clinic. All rights reserved. | Designed with care for your smile</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919270757455" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.408 1.408-5.234-0.292-0.508c-1.207-2.100-1.867-4.507-1.867-6.971 0-7.467 6.067-13.533 13.533-13.533s13.533 6.067 13.533 13.533c0 7.467-6.067 13.533-13.533 13.533zM21.867 18.267c-0.373-0.187-2.207-1.093-2.547-1.213-0.34-0.133-0.587-0.187-0.833 0.187s-0.96 1.213-1.173 1.453c-0.213 0.253-0.427 0.28-0.8 0.093s-1.56-0.573-2.973-1.833c-1.093-0.987-1.84-2.207-2.053-2.58s-0.027-0.573 0.16-0.76c0.173-0.16 0.373-0.427 0.56-0.64s0.253-0.373 0.373-0.613c0.133-0.253 0.067-0.467-0.027-0.653s-0.833-2-1.147-2.747c-0.293-0.72-0.6-0.627-0.833-0.64-0.213-0.013-0.467-0.013-0.72-0.013s-0.653 0.093-0.987 0.467c-0.347 0.373-1.307 1.28-1.307 3.12s1.333 3.613 1.52 3.867c0.187 0.24 2.613 4 6.333 5.613 0.88 0.387 1.573 0.613 2.107 0.787 0.893 0.28 1.707 0.24 2.347 0.147 0.72-0.107 2.207-0.907 2.52-1.787s0.307-1.627 0.213-1.787c-0.080-0.187-0.333-0.293-0.707-0.48z"/>
+        </svg>
+    </a>
+
+    <script>
+        
+        // Specialist Dropdown
+const specialistBtn = document.querySelector(".specialist-btn");
+const specialistList = document.querySelector(".specialist-list");
+
+specialistBtn.addEventListener("click", () => {
+  if (specialistList.style.maxHeight) {
+    specialistList.style.maxHeight = null;
+  } else {
+    specialistList.style.maxHeight = specialistList.scrollHeight + "px";
+  }
+});
+        import './style.css'
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const allFaqItems = document.querySelectorAll('.faq-item');
+            
+            allFaqItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            faqItem.classList.toggle('active');
+        }
+
+        // Appointment Form Handler
+        function handleAppointment(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Create WhatsApp message
+            const message = `New Appointment Request:%0A%0AName: ${data.name}%0APhone: ${data.phone}%0ATreatment: ${data.treatment}%0APreferred Date: ${data.date}%0AMessage: ${data.message || 'N/A'}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/919270757455?text=${message}`, '_blank');
+            
+            // Show success message
+            alert('Thank you! You will be redirected to WhatsApp to confirm your appointment.');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 30px var(--shadow-medium)';
+            } else {
+                header.style.boxShadow = '0 2px 20px var(--shadow-soft)';
+            }
+        });
+
+        // Set minimum date for appointment to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
+    <script>
+const track = document.getElementById("carouselTrack");
+const slides = document.querySelectorAll(".carousel-slide");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let currentIndex = 0;
+const totalSlides = slides.length;
+
+// Move to specific slide
+function moveToSlide(index) {
+  if (index >= totalSlides) {
+    currentIndex = 0; // loop to first
+  } else if (index < 0) {
+    currentIndex = totalSlides - 1; // loop to last
+  } else {
+    currentIndex = index;
+  }
+
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Next button
+nextBtn.addEventListener("click", () => {
+  moveToSlide(currentIndex + 1);
+});
+
+// Previous button
+prevBtn.addEventListener("click", () => {
+  moveToSlide(currentIndex - 1);
+});
+
+// 🔁 Auto slide every 3 seconds
+setInterval(() => {
+  moveToSlide(currentIndex + 1);
+}, 3000);
+</script>
+<script>
+const toggles = document.querySelectorAll(".service-toggle");
+
+toggles.forEach(toggle => {
+  toggle.addEventListener("click", function () {
+    const card = this.closest(".service-card");
+
+    // Close other open cards (optional – accordion style)
+    document.querySelectorAll(".service-card").forEach(item => {
+      if (item !== card) {
+        item.classList.remove("active");
+      }
+    });
+
+    // Toggle current card
+    card.classList.toggle("active");
+  });
+});
+</script>
+<script>
+function toggleFaq(element) {
+    const faqItem = element.parentElement;
+
+    // Close all other FAQs (optional)
+    document.querySelectorAll(".faq-item").forEach(item => {
+        if (item !== faqItem) {
+            item.classList.remove("active");
+        }
+    });
+
+    // Toggle current FAQ
+    faqItem.classList.toggle("active");
+}
+</script>
+<script>
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+</script>
+<script>
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const toggle = document.querySelector('.mobile-menu-toggle');
+
+  navLinks.classList.toggle('active');
+  toggle.classList.toggle('open');
+}
+
+/* 🔥 Close menu when any link is clicked */
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    const toggle = document.querySelector('.mobile-menu-toggle');
+
+    navLinks.classList.remove('active');
+    toggle.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>

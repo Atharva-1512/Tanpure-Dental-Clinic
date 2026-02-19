@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMD Clothing | Premium Trousers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. DESIGN TOKENS --- */
+        :root {
+            --primary: #1c1b1b;
+            --accent: #059669; /* Green for Analytics */
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --spacing-md: 40px;
+        }
+
+        /* --- 2. RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Manrope', sans-serif; }
+        
+        body { 
+            color: var(--primary); 
+            background: #fff; 
+            overflow-x: hidden; /* Critical for preventing horizontal scroll bars */
+        }
+
+        /* Responsive Images */
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- 3. HERO SECTION --- */
+        .hero-section { 
+            display: grid; 
+            grid-template-columns: 1.2fr 1fr; /* Desktop Split */
+            gap: 50px; 
+            margin-top: 40px; 
+            margin-bottom: 80px;
+        }
+        
+        .hero-image { position: relative; background: #f3f4f6; border-radius: 8px; overflow: hidden; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .hero-badge { 
+            position: absolute; top: 20px; left: 20px; 
+            background: #d32f2f; color: white; padding: 5px 10px; 
+            font-weight: 700; font-size: 12px; text-transform: uppercase; 
+        }
+
+        .hero-info h1 { font-size: 2.2rem; margin-bottom: 10px; line-height: 1.2; }
+        
+        .price-wrapper { 
+            font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; 
+            display: flex; align-items: baseline; gap: 15px; flex-wrap: wrap;
+        }
+        .price-wrapper span { font-size: 1.2rem; color: #9ca3af; text-decoration: line-through; font-weight: 500; }
+        
+        /* Buttons */
+        .btn-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+        .btn { width: 100%; padding: 18px; font-weight: 700; text-transform: uppercase; text-align: center; cursor: pointer; border-radius: 4px; border: 1px solid #000; }
+        .btn-primary { background: #000; color: #fff; }
+        .btn-outline { background: #fff; color: #000; }
+
+        /* Size Selector */
+        .size-grid { display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
+        .size-box { 
+            width: 45px; height: 45px; border: 1px solid #ddd; 
+            display: flex; align-items: center; justify-content: center; font-size: 14px; 
+        }
+        .size-box.active { background: #000; color: white; border-color: #000; }
+        .size-box.disabled { color: #ccc; background: #f9f9f9; text-decoration: line-through; }
+
+        /* Accordions */
+        .accordion-wrapper { border-top: 1px solid var(--border-color); margin-top: 20px; }
+        details { padding: 18px 0; border-bottom: 1px solid var(--border-color); cursor: pointer; }
+        summary { list-style: none; font-weight: 600; display: flex; justify-content: space-between; font-size: 14px; }
+        summary::after { content: "+"; font-size: 18px; }
+        details[open] summary::after { content: "-"; }
+        .acc-body { font-size: 14px; color: #555; padding-top: 10px; line-height: 1.6; }
+
+        /* --- 4. DASHBOARD SECTION (Review Analytics) --- */
+        .dashboard-section { padding: 60px 0; background: #fff; border-top: 1px solid var(--border-color); }
+        
+        .analytics-card { 
+            background: #fff; border: 1px solid var(--border-color); border-radius: 16px; 
+            padding: 40px; 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 50px;
+        }
+        
+        .rating-bars { display: flex; flex-direction: column; justify-content: center; }
+        .bar-row { display: flex; align-items: center; gap: 15px; font-size: 13px; margin-bottom: 8px; color: #6b7280; }
+        .bar-track { flex: 1; height: 8px; background: #f3f4f6; border-radius: 4px; overflow: hidden; }
+        .bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
+        
+        .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .insight-item { background: #f0fdf4; padding: 20px; border-radius: 12px; text-align: center; }
+        .insight-val { font-size: 1.8rem; font-weight: 800; color: var(--accent); display: block; margin-bottom: 5px; }
+        .insight-label { font-size: 0.8rem; color: #065f46; font-weight: 600; text-transform: uppercase; }
+
+        /* Review Grid */
+        .reviews-header { margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        
+        .reviews-grid { 
+            display: grid; 
+            /* Fix for Mobile: Cards now shrink to 280px minimum */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 20px; 
+        }
+        
+        .review-card { 
+            border: 1px solid var(--border-color); padding: 25px; border-radius: 16px; 
+            background: #fff; transition: transform 0.2s; 
+        }
+        .review-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        
+        .user-head { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .user-avatar { width: 40px; height: 40px; background: #d1fae5; color: var(--accent); border-radius: 50%; display: grid; place-items: center; font-weight: 700; }
+        
+        /* --- 5. YOU MAY ALSO LIKE --- */
+        .rec-section { padding: 60px 0; background: #fff; }
+        .rec-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px; 
+        }
+        .rec-card { cursor: pointer; }
+        .rec-img { 
+            aspect-ratio: 3/4; /* Ensures consistent height */
+            background: #f3f4f6; overflow: hidden; margin-bottom: 15px; 
+        }
+        .rec-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+        .rec-card:hover img { transform: scale(1.05); }
+
+        /* --- 6. FOOTER --- */
+        footer { background: var(--primary); color: #fff; padding: 60px 0 30px; margin-top: 60px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: #9ca3af; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; color: #d1d5db; font-size: 0.9rem; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 30px; font-size: 0.8rem; color: #6b7280; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+        /* --- 7. RESPONSIVENESS (Mobile/Tablet) --- */
+        @media (max-width: 900px) {
+            /* Stack Hero Section */
+            .hero-section { grid-template-columns: 1fr; gap: 30px; }
+            .hero-image { aspect-ratio: 1/1; /* Square image on mobile */ }
+            
+            /* Stack Analytics */
+            .analytics-card { grid-template-columns: 1fr; gap: 40px; padding: 25px; }
+            
+            /* Stack Recommendations */
+            .rec-grid { 
+                grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+                gap: 15px; 
+            }
+            
+            /* Stack Footer */
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 500px) {
+            /* 1 column for Recs on very small screens */
+            .rec-grid { grid-template-columns: 1fr; }
+            
+            /* Typography Adjustments */
+            .hero-info h1 { font-size: 1.8rem; }
+            .insight-val { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<main class="container">
+    <section class="hero-section">
+        <div class="hero-image">
+            <div class="hero-badge">500+ Units Sold</div>
+            <img src="assets/product.jpg" alt="DMD Trousers" onerror="this.style.display='none'"> 
+        </div>
+        
+        <article class="hero-info">
+            <nav style="font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase;">Home / Men / Formal</nav>
+            <h1>Lycra Cotton Stretchable | Plain Formal Trousers | Polo Fit</h1>
+            
+            <div class="price-wrapper">
+                ₹ 1,349 <span>₹ 2,699</span> <span style="color:#d32f2f; font-size:1rem; margin-left:10px;">50% OFF</span>
+            </div>
+            
+            <p style="font-size: 13px; font-weight: 700; margin-bottom: 5px;">SIZE: 38</p>
+            <div class="size-grid">
+                <div class="size-box disabled">32</div>
+                <div class="size-box">34</div>
+                <div class="size-box">36</div>
+                <div class="size-box active">38</div>
+            </div>
+
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 5px; margin-top: 10px;">COLOR: CHARCOAL BLACK</div>
+            <div style="border:1px solid #000; padding:10px; display:inline-block; font-size:13px; font-weight:700; margin-bottom:20px;">CHARCOAL BLACK</div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary">Add to Cart</button>
+                <button class="btn btn-outline">Buy Now</button>
+            </div>
+
+            <div class="accordion-wrapper">
+                <details>
+                    <summary>Key Features</summary>
+                    <div class="acc-body">
+                        • Premium Lycra Cotton Blend<br>
+                        • 4-Way Stretch Technology<br>
+                        • Wrinkle-Resistant Finish
+                    </div>
+                </details>
+                <details>
+                    <summary>Size Chart</summary>
+                    <div class="acc-body">Slim Fit. Model is 6'0" wearing size 32. True to size.</div>
+                </details>
+                <details>
+                    <summary>Shipping Policy</summary>
+                    <div class="acc-body">Free shipping on all prepaid orders. Dispatched within 24 hours.</div>
+                </details>
+                <details>
+                    <summary>Vendor's Details</summary>
+                    <div class="acc-body">Manufactured by DMD Clothing Pvt Ltd, Pune, Maharashtra.</div>
+                </details>
+            </div>
+        </article>
+    </section>
+
+    <section class="dashboard-section">
+        <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">Customer Analytics</h2>
+        
+        <div class="analytics-card">
+            <div class="rating-bars">
+                <div style="margin-bottom: 20px;">
+                    <span style="font-size: 3rem; font-weight: 800;">4.8</span>
+                    <span style="color: #fbbf24; font-size: 1.5rem; margin-left: 10px;">★★★★★</span>
+                    <p style="color: #666;">Based on 198 Verified Reviews</p>
+                </div>
+                <div class="bar-row">5 ★ <div class="bar-track"><div class="bar-fill" style="width: 87%"></div></div> 87%</div>
+                <div class="bar-row">4 ★ <div class="bar-track"><div class="bar-fill" style="width: 10%"></div></div> 10%</div>
+                <div class="bar-row">3 ★ <div class="bar-track"><div class="bar-fill" style="width: 2%"></div></div> 2%</div>
+            </div>
+            
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <span class="insight-val">96%</span>
+                    <span class="insight-label">Would Recommend</span>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-val">4.9</span>
+                    <span class="insight-label">Comfort Rating</span>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-val">12h</span>
+                    <span class="insight-label">Avg Dispatch Time</span>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-val">1.2k</span>
+                    <span class="insight-label">Happy Customers</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-header">
+            <div style="font-size: 2rem; font-weight: 800;">Customer Reviews</div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <span style="padding: 8px 16px; background: var(--accent); color: white; border-radius: 20px; font-size: 13px; font-weight: 600;">Show All</span>
+                <span style="padding: 8px 16px; border: 1px solid #ddd; border-radius: 20px; font-size: 13px; font-weight: 600;">Excellent</span>
+            </div>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="user-head">
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div class="user-avatar">P</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Priya S.</div>
+                            <div style="color: #fbbf24; font-size: 0.8rem;">★★★★★</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af;">2 mo ago</div>
+                </div>
+                <div style="font-weight:700; margin-bottom:5px;">Amazing fit!</div>
+                <p style="color:#555; font-size:0.95rem; line-height:1.6">"Just received this yesterday and I'm blown away! The Lycra cotton fabric adds such a nice stretch."</p>
+            </div>
+            <div class="review-card">
+                <div class="user-head">
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div class="user-avatar" style="background: #e0e7ff; color: #4338ca;">A</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Ananya S.</div>
+                            <div style="color: #fbbf24; font-size: 0.8rem;">★★★★★</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af;">1 mo ago</div>
+                </div>
+                <div style="font-weight:700; margin-bottom:5px;">Love at first wear</div>
+                <p style="color:#555; font-size:0.95rem; line-height:1.6">"OMG! These trousers are everything I wanted. The charcoal color is premium."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rec-section">
+        <h3 style="font-size: 1.5rem; margin-bottom: 30px; font-weight: 700;">You May Also Like</h3>
+        <div class="rec-grid">
+            <div class="rec-card">
+                <div class="rec-img">
+                    <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=800&auto=format&fit=crop" alt="Beige Chinos">
+                </div>
+                <div style="font-weight: 700; font-size: 1rem; margin-bottom: 5px;">Slim Fit Beige Chinos</div>
+                <div style="font-size: 0.9rem; color: #444;">₹ 1,299</div>
+            </div>
+            
+            <div class="rec-card">
+                <div class="rec-img">
+                    <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=800&auto=format&fit=crop" alt="Navy Blue Formal Pants">
+                </div>
+                <div style="font-weight: 700; font-size: 1rem; margin-bottom: 5px;">Navy Blue Formal Pants</div>
+                <div style="font-size: 0.9rem; color: #444;">₹ 1,499</div>
+            </div>
+
+            <div class="rec-card">
+                <div class="rec-img">
+                    <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=800&auto=format&fit=crop" alt="Classic White Shirt">
+                </div>
+                <div style="font-weight: 700; font-size: 1rem; margin-bottom: 5px;">Classic White Shirt</div>
+                <div style="font-size: 0.9rem; color: #444;">₹ 999</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h2 style="font-size: 1.5rem; margin-bottom: 15px;">DMD CLOTHING</h2>
+                <p style="font-size: 0.9rem; color: #9ca3af;">Premium trousers, consciously crafted in small batches using natural fabrics.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul><li>All Trousers</li><li>Formal</li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul><li>Privacy Policy</li><li>Terms & Condition</li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul><li>+91-7744844867</li><li>support@dmdclothing.com</li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2025 DMD Clothing.</div>
+            <div>Secure Payments: UPI | Visa | MasterCard</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
