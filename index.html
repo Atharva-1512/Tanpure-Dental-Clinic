@@ -1,0 +1,2465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanpure Dental Clinic | Advanced Orthodontic Care in Wakad, Pune</title>
+    <meta name="description" content="Expert orthodontic care by Dr. Saurabh Tanpure & Dr. Pranoti Gade-Tanpure. Invisible braces, dental implants, and painless treatments in Wakad, Pune.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-beige: #E8D8C3;
+            --dark-beige: #D4C4AD;
+            --light-beige: #F5F0E8;
+            --white: #FFFFFF;
+            --off-white: #FDFCFA;
+            --text-dark: #2C2419;
+            --text-medium: #5C5347;
+            --text-light: #8B8379;
+            --accent-gold: #C9A97F;
+            --shadow-soft: rgba(44, 36, 25, 0.08);
+            --shadow-medium: rgba(44, 36, 25, 0.12);
+            --shadow-strong: rgba(44, 36, 25, 0.18);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== SCROLL REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: box-shadow 0.3s ease, background 0.3s ease;
+            box-shadow: 0 2px 20px var(--shadow-soft);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px var(--shadow-medium);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:not(.cta-button)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:not(.cta-button):hover {
+            color: var(--text-dark);
+        }
+
+        .nav-links a:not(.cta-button):hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-gold), #B89968);
+            color: white !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(201, 169, 127, 0.3);
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(201, 169, 127, 0.45);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 26px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.35s ease;
+            display: block;
+        }
+
+        .mobile-menu-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .mobile-menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        .mobile-menu-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-beige) 0%, var(--white) 50%, var(--off-white) 100%);
+            padding: 8rem 3rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(201, 169, 127, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: heroFloat 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 216, 195, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: heroFloat 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-30px, -40px) scale(1.05); }
+            66% { transform: translate(20px, -20px) scale(0.98); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-tagline {
+            font-size: 1.35rem;
+            color: var(--text-medium);
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-highlight {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), #B89968);
+            color: white;
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(201, 169, 127, 0.35);
+            letter-spacing: 0.05em;
+            display: inline-block;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(201, 169, 127, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-dark);
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px var(--shadow-soft);
+            border: 2px solid var(--primary-beige);
+            letter-spacing: 0.05em;
+            display: inline-block;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-beige);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--shadow-medium);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .hero-image-placeholder {
+            background: linear-gradient(135deg, var(--primary-beige), var(--dark-beige));
+            border-radius: 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 60px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        .hero-image-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.1) 100%);
+            border-radius: 24px;
+            pointer-events: none;
+        }
+
+        /* ===== CAROUSEL BANNER ===== */
+        .carousel-banner {
+            width: 100%;
+            background: var(--light-beige);
+            padding: 3rem 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px var(--shadow-medium);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-arrow:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-arrow { left: 35px; }
+        .right-arrow { right: 35px; }
+
+        .carousel-arrow span {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--dark-beige);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .dot.active {
+            background: var(--accent-gold);
+            width: 28px;
+            border-radius: 5px;
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section-wrap {
+            padding: 6rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 3.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--primary-beige));
+            margin: 1.2rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-content {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px var(--shadow-soft);
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            line-height: 1.9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-gold), var(--primary-beige));
+        }
+
+        /* ===== INVISALIGN SECTION ===== */
+        .invisalign-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .left-content {
+            flex: 1;
+        }
+
+        .qr-image {
+            width: 220px;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 30px var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .qr-image:hover {
+            transform: translateY(-4px);
+        }
+
+        .text-content h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+        }
+
+        .text-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .text-content p {
+            color: var(--text-medium);
+            font-size: 1rem;
+        }
+
+        .right-content {
+            flex: 1;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px var(--shadow-medium);
+        }
+
+        .video-placeholder video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===== INVISALIGN PROMO ===== */
+        .invisalign-promo {
+            text-align: center;
+            padding: 5rem 3rem;
+            background: linear-gradient(135deg, var(--light-beige) 0%, var(--white) 100%);
+        }
+
+        .invisalign-promo-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .invisalign-image {
+            width: 400px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 2rem;
+            display: block;
+        }
+
+        .invisalign-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .invisalign-price b {
+            color: var(--accent-gold);
+            font-size: 2.2rem;
+        }
+
+        .invisalign-description {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1a1410 100%);
+            padding: 4rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 127, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== DOCTORS SECTION ===== */
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .doctor-card {
+            background: white;
+            border-radius: 28px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--primary-beige), var(--accent-gold));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px var(--shadow-medium);
+        }
+
+        .doctor-card:hover::before {
+            opacity: 1;
+        }
+
+        .doctor-image {
+            width: 170px;
+            height: 170px;
+            background: linear-gradient(135deg, var(--primary-beige), var(--dark-beige));
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px var(--shadow-soft);
+            overflow: hidden;
+            border: 4px solid white;
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .doctor-name {
+            font-size: 1.9rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-credentials {
+            color: var(--accent-gold);
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .doctor-specialty {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .doctor-bio {
+            color: var(--text-medium);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px var(--shadow-soft);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px var(--shadow-medium);
+            border-color: var(--primary-beige);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.06);
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-content > p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-toggle {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            color: var(--accent-gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .service-toggle:hover {
+            background: var(--light-beige);
+        }
+
+        .service-card.active .service-toggle .toggle-arrow {
+            transform: rotate(180deg);
+        }
+
+        .toggle-arrow {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            color: var(--text-medium);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .service-card.active .service-detail {
+            max-height: 500px;
+            padding-top: 0.8rem;
+        }
+
+        /* ===== WHY CHOOSE US (GLASSMORPHISM) ===== */
+        .features-section {
+            background: linear-gradient(135deg, var(--light-beige) 0%, var(--off-white) 50%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201, 169, 127, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px var(--shadow-soft);
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(232, 216, 195, 0.3);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 50px var(--shadow-medium);
+            border-color: rgba(201, 169, 127, 0.4);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-beige), var(--primary-beige));
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--accent-gold);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-description {
+            color: var(--text-medium);
+            font-size: 0.93rem;
+            line-height: 1.7;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px var(--shadow-soft);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover::after {
+            transform: translateX(100%);
+        }
+
+        /* ===== APPOINTMENT SECTION ===== */
+        .appointment-section {
+            background: linear-gradient(135deg, var(--light-beige), white);
+            padding: 4rem;
+            border-radius: 32px;
+            box-shadow: 0 15px 60px var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 127, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .appointment-form {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.92rem;
+            letter-spacing: 0.03em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem 1.3rem;
+            border: 2px solid var(--primary-beige);
+            border-radius: 14px;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 5px 20px rgba(201, 169, 127, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, var(--accent-gold), #B89968);
+            color: white;
+            padding: 1.1rem;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(201, 169, 127, 0.35);
+            letter-spacing: 0.05em;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(201, 169, 127, 0.5);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: var(--light-beige);
+            overflow: hidden;
+        }
+
+        .testimonial-carousel {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-track-wrap {
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            padding: 3rem;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px var(--shadow-soft);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            font-size: 5rem;
+            color: var(--primary-beige);
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1;
+            opacity: 0.6;
+        }
+
+        .testimonial-text {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-size: 1.05rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-stars {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--dark-beige);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .testimonial-dot.active {
+            background: var(--accent-gold);
+            width: 26px;
+            border-radius: 5px;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px var(--shadow-soft);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 30px var(--shadow-medium);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.15rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: var(--light-beige);
+        }
+
+        .faq-icon {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 2rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 1.5rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            padding: 3.5rem;
+            border-radius: 28px;
+            box-shadow: 0 15px 60px var(--shadow-soft);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-beige), var(--primary-beige));
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-gold);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .info-content h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .info-content p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .info-content a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-content a:hover {
+            color: var(--text-dark);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--light-beige), var(--primary-beige));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--accent-gold), #B89968);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(201, 169, 127, 0.3);
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent-gold);
+            transition: fill 0.3s ease;
+        }
+
+        .social-icon:hover svg {
+            fill: white;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            height: 100%;
+            min-height: 380px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow-soft);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark), #1a1410);
+            color: white;
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary-beige);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: wpPulse 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes wpPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.65), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-text h1 { font-size: 3.5rem; }
+            .section-title { font-size: 2.8rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                height: 100vh;
+                padding: 5rem 2rem 2rem;
+                box-shadow: 0 10px 40px var(--shadow-medium);
+                transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                z-index: 1000;
+            }
+
+            .nav-links.active { left: 0; }
+
+            .mobile-menu-toggle { display: flex; }
+
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+                min-height: auto;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2.5rem;
+            }
+
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-tagline { font-size: 1.1rem; }
+            .hero-highlight { font-size: 0.9rem; }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-image-placeholder { height: 350px; }
+
+            .carousel-slide img { height: 250px; }
+            .carousel-arrow { width: 40px; height: 40px; }
+            .carousel-arrow span { font-size: 1.3rem; }
+            .left-arrow { left: 15px; }
+            .right-arrow { right: 15px; }
+
+            .section-wrap { padding: 4rem 1.5rem; }
+            .section-title { font-size: 2.4rem; }
+
+            .about-content { padding: 2.5rem 2rem; }
+
+            .invisalign-wrapper {
+                flex-direction: column;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .qr-image { margin: 0 auto 1.5rem; display: block; }
+
+            .doctors-grid { grid-template-columns: 1fr; }
+
+            .services-grid { grid-template-columns: 1fr; }
+
+            .features-grid { grid-template-columns: 1fr; }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .gallery-item { height: 200px; }
+
+            .form-row { grid-template-columns: 1fr; }
+
+            .appointment-section { padding: 2.5rem 1.5rem; border-radius: 20px; }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .info-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons { justify-content: center; }
+
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .stat-number { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 2.2rem; }
+            .section-title { font-size: 2rem; }
+            .carousel-slide img { height: 200px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item { height: 220px; }
+            .stat-item { padding: 1rem 0.5rem; }
+            .stat-number { font-size: 2rem; }
+            .invisalign-image { width: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <nav>
+            <a href="#home" class="logo">Tanpure <span>Dental</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#services">Treatments</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#invisalign" class="cta-button">🦷 Invisalign</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Tanpure Dental Clinic</h1>
+                <p class="hero-tagline">Your Smile, Our Priority</p>
+                <p class="hero-highlight">ADVANCED • AFFORDABLE • GENTLE CARE</p>
+                <div class="hero-buttons">
+                    <a href="#appointment" class="btn-primary">Book Appointment</a>
+                    <a href="tel:9270757455" class="btn-secondary">Call Now</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-placeholder">
+                    <img src="images/logo.jpeg" alt="Tanpure Dental Clinic — Expert Orthodontic Care in Wakad, Pune">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="carousel-banner">
+        <div class="carousel-container">
+            <button class="carousel-arrow left-arrow" id="prevBtn" aria-label="Previous slide">
+                <span>&#8249;</span>
+            </button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <img src="./images/banner1.png" alt="Advanced Dental Services at Tanpure Dental Clinic">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/banner2.png" alt="Orthodontic Treatment Solutions">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/banner3.png" alt="Smile Designing Services">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/banner4.png" alt="Dental Clinic Modern Equipment">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow right-arrow" id="nextBtn" aria-label="Next slide">
+                <span>&#8250;</span>
+            </button>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-wrap">
+        <div class="section-header reveal">
+            <span class="section-label">About Us</span>
+            <h2 class="section-title">Welcome to Excellence in Dental Care</h2>
+            <p class="section-subtitle">Modern Equipment • Painless Treatments • Family Care</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="about-content reveal">
+            At Tanpure Dental Clinic, we blend cutting-edge dental technology with compassionate care to create beautiful, healthy smiles. Our state-of-the-art facility in Wakad, Pune, is equipped with the latest digital X-ray systems, advanced scanners, and modern treatment equipment. Specializing in orthodontics, we offer painless treatments tailored for patients of all ages. From routine cleanings to complex dental implants, our expert team ensures your dental experience is comfortable, efficient, and focused on achieving optimal oral health. We believe every smile tells a story, and we're here to make yours extraordinary.
+        </div>
+    </section>
+
+    <!-- Invisalign Section with Video -->
+    <section class="section-wrap" id="invisalign">
+        <div class="invisalign-wrapper">
+            <div class="left-content reveal">
+                <div class="qr-container">
+                    <img src="./images/smile-makeover.jpeg" alt="Scan for Smile Makeover" class="qr-image">
+                </div>
+                <div class="text-content">
+                    <h3>See real smile makeover in seconds – just scan</h3>
+                    <h2>Your Smile, Our Priority</h2>
+                    <p>Premium dental solutions designed for your comfort and confidence.</p>
+                </div>
+            </div>
+            <div class="right-content reveal reveal-delay-2">
+                <div class="video-placeholder">
+                    <video autoplay loop muted playsinline poster="./images/video-thumbnail.jpg">
+                        <source src="./images/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invisalign Promo -->
+    <section class="invisalign-promo">
+        <div class="invisalign-promo-inner reveal">
+            <img src="./images/invisalign-img.png" alt="Invisalign Clear Aligners Treatment" class="invisalign-image">
+            <p class="invisalign-price">Invisalign Treatment with <b>₹3,499*</b> per tray onwards</p>
+            <p class="invisalign-description">
+                Get the smile you've always wanted with clear, comfortable aligners.
+                Affordable pricing and flexible payment options available.
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="5000">0</div>
+                <div class="stat-label">Happy Patients</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-1">
+                <div class="stat-number" data-target="8">0</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-2">
+                <div class="stat-number" data-target="12">0</div>
+                <div class="stat-label">Dental Services</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-3">
+                <div class="stat-number" data-target="2">0</div>
+                <div class="stat-label">Expert Orthodontists</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="section-wrap">
+        <div class="section-header reveal">
+            <span class="section-label">Our Team</span>
+            <h2 class="section-title">Meet Our Expert Orthodontists</h2>
+            <p class="section-subtitle">Experienced • Certified • Compassionate</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card reveal">
+                <div class="doctor-image">
+                    <img src="images/10.jpeg" alt="Dr. Saurabh Tanpure — Orthodontic Specialist">
+                </div>
+                <h3 class="doctor-name">Dr. Saurabh Tanpure</h3>
+                <p class="doctor-credentials">BDS, MDS (Orthodontics)</p>
+                <p class="doctor-specialty">Specialist in Orthodontics & Dentofacial Orthopedics</p>
+                <p class="doctor-bio">With years of dedicated practice in orthodontics, Dr. Saurabh brings precision and artistry to every smile transformation. His expertise in invisible braces and advanced alignment techniques has helped thousands of patients achieve their dream smiles with confidence and comfort.</p>
+            </div>
+            <div class="doctor-card reveal reveal-delay-2">
+                <div class="doctor-image">
+                    <img src="images/11.jpeg" alt="Dr. Pranoti Gade-Tanpure — Aesthetic Dentistry Specialist">
+                </div>
+                <h3 class="doctor-name">Dr. Pranoti Gade-Tanpure</h3>
+                <p class="doctor-credentials">BDS, MDS (Orthodontics)</p>
+                <p class="doctor-specialty">Specialist in Orthodontics & Aesthetic Dentistry</p>
+                <p class="doctor-bio">Dr. Pranoti combines clinical excellence with a gentle approach, making even the most anxious patients feel at ease. Her passion for smile designing and child dentistry ensures that every family member receives personalized, compassionate care tailored to their unique needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-wrap" id="services">
+        <div class="section-header reveal">
+            <span class="section-label">What We Offer</span>
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-subtitle">Comprehensive dental care under one roof</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-image">
+                    <img src="./images/download.jpeg" alt="Orthodontic Care">
+                </div>
+                <div class="service-content">
+                    <h3>Orthodontic Care</h3>
+                    <p>Comprehensive care for overall oral health</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        We provide comprehensive orthodontic care for children, teens, and adults, including braces, clear aligners, and correction of crowded or misaligned teeth. Our clinic has an in-house orthodontic specialist available on scheduled days, ensuring smooth appointment planning and faster treatment progress. With no external referrals required, patients enjoy convenient scheduling, consistent follow-ups, and personalized care under one roof.
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-image">
+                    <img src="images/smile-designing.jpeg" alt="Smile Designing">
+                </div>
+                <div class="service-content">
+                    <h3>Smile Designing</h3>
+                    <p>Customized cosmetic enhancement for perfect smiles</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        Smile designing is a cosmetic dental procedure that focuses on enhancing the appearance of a person's smile through customized treatment planning. It involves analyzing facial features, tooth shape, size, color, alignment, and gum structure to create a balanced and attractive smile. Treatments may include teeth whitening, veneers, braces, aligners, gum contouring, or crowns.
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-image">
+                    <img src="images/Teeth-Cleaning.jpeg" alt="Teeth Cleaning">
+                </div>
+                <div class="service-content">
+                    <h3>Teeth Cleaning</h3>
+                    <p>Professional plaque and tartar removal</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        Teeth cleaning, also known as professional dental scaling and polishing, is a preventive procedure that removes plaque, tartar, and surface stains from the teeth. Regular teeth cleaning, usually recommended every six months, plays a vital role in maintaining oral hygiene, preventing dental problems, and keeping your smile fresh, bright, and healthy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card reveal reveal-delay-3">
+                <div class="service-image">
+                    <img src="images/root-canal.png" alt="Root Canal Treatment">
+                </div>
+                <div class="service-content">
+                    <h3>Root Canal Treatment</h3>
+                    <p>Pain relief and infected tooth treatment</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        Root Canal Treatment (RCT) is a dental procedure used to treat infected or severely decayed teeth while preserving the natural tooth structure. During RCT, the dentist carefully removes the infected pulp, cleans and disinfects the root canals, and then fills and seals them. A crown is usually placed to restore strength and function.
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card reveal reveal-delay-4">
+                <div class="service-image">
+                    <img src="images/emergency-care.png" alt="Emergency Care">
+                </div>
+                <div class="service-content">
+                    <h3>Emergency Care</h3>
+                    <p>Immediate treatment for urgent dental issues</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        Emergency dental care provides immediate treatment for urgent oral health problems. It includes managing severe toothaches, broken or knocked-out teeth, swelling, infections, bleeding gums, and dental trauma caused by accidents. Quick professional intervention can make a significant difference in preserving your smile.
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card reveal reveal-delay-5">
+                <div class="service-image">
+                    <img src="images/Tooth-Extraction.jpeg" alt="Tooth Extraction">
+                </div>
+                <div class="service-content">
+                    <h3>Tooth Extraction</h3>
+                    <p>Safe removal of damaged teeth</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        Tooth extraction is a dental procedure performed to remove a damaged, decayed, or problematic tooth. It may be necessary in cases of severe infection, advanced gum disease, overcrowding, or impacted wisdom teeth. The procedure is carried out under local anesthesia to ensure comfort and minimal pain.
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-image">
+                    <img src="images/crown.jpeg" alt="Crown and Bridge">
+                </div>
+                <div class="service-content">
+                    <h3>Crown & Bridge</h3>
+                    <p>Restore strength and replace missing teeth</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        Crowns and bridges are restorative dental treatments used to repair and replace damaged or missing teeth. A dental crown is a custom-made cap placed over a weakened tooth. A dental bridge replaces one or more missing teeth by anchoring an artificial tooth to neighboring natural teeth or implants.
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-image">
+                    <img src="images/Dentures.jpeg" alt="Dentures">
+                </div>
+                <div class="service-content">
+                    <h3>Dentures</h3>
+                    <p>Removable replacement for missing teeth</p>
+                    <button class="service-toggle">Learn more <span class="toggle-arrow">▼</span></button>
+                    <div class="service-detail">
+                        Dentures are removable dental appliances used to replace missing teeth and restore oral function. They can replace a few missing teeth (partial dentures) or an entire arch (complete dentures). Modern dentures are designed to look natural and provide a comfortable fit, offering an affordable solution for restoring confidence.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="features-section">
+        <div class="section-wrap">
+            <div class="section-header reveal">
+                <span class="section-label">Why Us</span>
+                <h2 class="section-title">Why Choose Tanpure Dental</h2>
+                <p class="section-subtitle">Excellence in every aspect of dental care</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <h3 class="feature-title">Advanced Equipment</h3>
+                    <p class="feature-description">State-of-the-art digital technology and modern dental equipment for precise, efficient treatments</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3 class="feature-title">Gentle & Painless</h3>
+                    <p class="feature-description">Modern techniques and sedation options ensure comfortable, anxiety-free dental experiences</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3 class="feature-title">Emergency Care</h3>
+                    <p class="feature-description">Available for urgent dental issues with prompt, professional attention when you need it most</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="feature-title">Affordable Plans</h3>
+                    <p class="feature-description">Flexible payment options and transparent pricing for quality dental care within your budget</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-wrap">
+        <div class="section-header reveal">
+            <span class="section-label">Gallery</span>
+            <h2 class="section-title">Our Clinic Gallery</h2>
+            <p class="section-subtitle">A glimpse into our modern facility</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <img src="images/1.jpeg" alt="Modern Dental Chair at Tanpure Dental Clinic">
+            </div>
+            <div class="gallery-item reveal reveal-delay-1">
+                <img src="images/2.jpeg" alt="Our Dental Team">
+            </div>
+            <div class="gallery-item reveal reveal-delay-2">
+                <img src="images/3.jpeg" alt="Clinic Grand Opening">
+            </div>
+            <div class="gallery-item reveal reveal-delay-3">
+                <img src="images/4.jpeg" alt="Advanced Dental Equipment">
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="section-wrap">
+        <div class="section-header reveal">
+            <span class="section-label">Book Now</span>
+            <h2 class="section-title">Book Your Appointment</h2>
+            <p class="section-subtitle">Take the first step towards your perfect smile</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="appointment-section reveal">
+            <form class="appointment-form" id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="treatment">Treatment Needed</label>
+                        <select id="treatment" name="treatment" required>
+                            <option value="">Select a treatment</option>
+                            <option value="invisible-braces">Invisible Braces (Clear Aligners)</option>
+                            <option value="metal-ceramic-braces">Metal & Ceramic Braces</option>
+                            <option value="smile-designing">Smile Designing</option>
+                            <option value="teeth-cleaning">Teeth Cleaning & Polishing</option>
+                            <option value="filling-rct">Tooth Filling & Root Canal</option>
+                            <option value="crown-bridge">Crown & Bridge</option>
+                            <option value="dental-implants">Dental Implants</option>
+                            <option value="extraction">Tooth Extraction</option>
+                            <option value="kids-dentistry">Kids Dentistry</option>
+                            <option value="gum-treatment">Gum Treatment</option>
+                            <option value="dentures">Complete/Partial Denture</option>
+                            <option value="emergency">Emergency Dental Care</option>
+                            <option value="consultation">General Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Message (Optional)</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your dental concerns"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="section-wrap">
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our Patients Say</h2>
+                <p class="section-subtitle">Real experiences from real patients</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="testimonial-carousel reveal">
+                <div class="testimonial-track-wrap">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The clinic maintains excellent hygiene and uses advanced technology for Invisalign treatment. The entire team was friendly and professional. My treatment was smooth, painless, and well-guided at every step. I'm already seeing great results, and my confidence has increased significantly."</p>
+                            <h4 class="testimonial-author-name">— Sunil Deshmukh</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"I had an amazing experience at this dental clinic for my Invisalign treatment. The doctors explained everything clearly and made me feel comfortable throughout the process. The aligners were convenient and nearly invisible. My teeth alignment has improved beautifully."</p>
+                            <h4 class="testimonial-author-name">— Om Kale</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"I was nervous about correcting my crowded teeth, but choosing Invisalign here was the best decision. The doctors were patient and supportive, answering all my doubts. The aligners fit perfectly and were easy to maintain. Highly recommend this clinic for orthodontic care."</p>
+                            <h4 class="testimonial-author-name">— Deepak Wankhede</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Outstanding service and care! The Invisalign treatment plan was customized according to my smile goals. The progress reviews were thorough and reassuring. The staff always made appointments comfortable and stress-free. I'm extremely satisfied with both the results and overall experience."</p>
+                            <h4 class="testimonial-author-name">— Sumit Yeole</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"This clinic truly focuses on patient comfort and precision. My Invisalign journey was smooth, and the aligners were barely noticeable. The results are natural and impressive. I appreciate the regular follow-ups and professional guidance throughout the treatment."</p>
+                            <h4 class="testimonial-author-name">— Arsh Gandhewar</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots" id="testimonialDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-wrap">
+        <div class="section-header reveal">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Get answers to common dental queries</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item reveal">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How long does orthodontic treatment with braces take?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    The duration of orthodontic treatment typically ranges from 12 to 24 months, depending on the complexity of your case. Invisible braces (clear aligners) may take 6-18 months for mild to moderate cases. During your consultation, our orthodontists will provide a personalized timeline based on your specific needs and goals.
+                </div>
+            </div>
+            <div class="faq-item reveal reveal-delay-1">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is root canal treatment painful?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Modern root canal treatments are virtually painless! We use advanced local anesthesia and gentle techniques to ensure your comfort throughout the procedure. Most patients report that root canal therapy is no more uncomfortable than getting a regular filling. We also offer sedation options for anxious patients.
+                </div>
+            </div>
+            <div class="faq-item reveal reveal-delay-2">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What makes dental implants better than dentures?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Dental implants are permanent tooth replacements that fuse with your jawbone, providing stability, natural appearance, and functionality similar to real teeth. Unlike dentures, implants don't slip, require no special maintenance beyond regular brushing, preserve jawbone health, and can last a lifetime with proper care.
+                </div>
+            </div>
+            <div class="faq-item reveal reveal-delay-3">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How often should I get my teeth professionally cleaned?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We recommend professional teeth cleaning every 6 months for most patients. However, if you have gum disease, heavy plaque buildup, or other oral health concerns, you may benefit from more frequent cleanings (every 3-4 months). Regular cleanings prevent cavities, gum disease, and keep your smile bright and healthy.
+                </div>
+            </div>
+            <div class="faq-item reveal reveal-delay-4">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you provide emergency dental services?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We provide emergency dental care for urgent issues like severe toothaches, broken teeth, knocked-out teeth, and dental infections. Call us immediately at 9270757455 or 8087427455 if you have a dental emergency. We prioritize emergency cases and will accommodate you as quickly as possible.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-wrap">
+        <div class="section-header reveal">
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">Visit Us Today</h2>
+            <p class="section-subtitle">We're here to help you achieve your perfect smile</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="contact-grid reveal">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="info-content">
+                        <h4>Address</h4>
+                        <p>B-06, Sonigara Landmark,<br>Chhatrapati Chowk Road,<br>Kaspate Wasti, Wakad,<br>Pune, Maharashtra</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div class="info-content">
+                        <h4>Phone</h4>
+                        <p><a href="tel:9270757455">9270757455</a><br><a href="tel:8087427455">8087427455</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="info-content">
+                        <h4>Clinic Timings</h4>
+                        <p>Morning: 10:00 AM - 2:00 PM<br>Evening: 5:00 PM - 10:00 PM<br>Open 7 days a week<br>Emergency Care available 24×7</p>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5771.551357039317!2d73.77106239691751!3d18.596498371709856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b90048f2ec4f%3A0xd58d755c558a80de!2sTanpure%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1771308299395!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tanpure Dental</h3>
+                <p>Your trusted partner in achieving and maintaining optimal oral health with advanced, affordable, and gentle dental care.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Treatments</a>
+                <a href="#appointment">Book Appointment</a>
+            </div>
+            <div class="footer-section">
+                <h3>Treatments</h3>
+                <a href="#services">Invisible Braces</a>
+                <a href="#services">Dental Implants</a>
+                <a href="#services">Smile Designing</a>
+                <a href="#services">Root Canal</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>B-06, Sonigara Landmark<br>Wakad, Pune</p>
+                <a href="tel:9270757455">9270757455</a>
+                <a href="tel:8087427455">8087427455</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tanpure Dental Clinic. All rights reserved. | Designed with care for your smile</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919270757455" target="_blank" class="whatsapp-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.408 1.408-5.234-0.292-0.508c-1.207-2.100-1.867-4.507-1.867-6.971 0-7.467 6.067-13.533 13.533-13.533s13.533 6.067 13.533 13.533c0 7.467-6.067 13.533-13.533 13.533zM21.867 18.267c-0.373-0.187-2.207-1.093-2.547-1.213-0.34-0.133-0.587-0.187-0.833 0.187s-0.96 1.213-1.173 1.453c-0.213 0.253-0.427 0.28-0.8 0.093s-1.56-0.573-2.973-1.833c-1.093-0.987-1.84-2.207-2.053-2.58s-0.027-0.573 0.16-0.76c0.173-0.16 0.373-0.427 0.56-0.64s0.253-0.373 0.373-0.613c0.133-0.253 0.067-0.467-0.027-0.653s-0.833-2-1.147-2.747c-0.293-0.72-0.6-0.627-0.833-0.64-0.213-0.013-0.467-0.013-0.72-0.013s-0.653 0.093-0.987 0.467c-0.347 0.373-1.307 1.28-1.307 3.12s1.333 3.613 1.52 3.867c0.187 0.24 2.613 4 6.333 5.613 0.88 0.387 1.573 0.613 2.107 0.787 0.893 0.28 1.707 0.24 2.347 0.147 0.72-0.107 2.207-0.907 2.52-1.787s0.307-1.627 0.213-1.787c-0.080-0.187-0.333-0.293-0.707-0.48z"/>
+        </svg>
+    </a>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ===== SCROLL REVEAL (IntersectionObserver) =====
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // ===== HEADER SCROLL EFFECT =====
+        var header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU =====
+        var menuToggle = document.getElementById('menuToggle');
+        var navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var headerHeight = header.offsetHeight;
+                    var targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== IMAGE CAROUSEL =====
+        var carouselTrack = document.getElementById('carouselTrack');
+        var slides = carouselTrack.querySelectorAll('.carousel-slide');
+        var prevBtn = document.getElementById('prevBtn');
+        var nextBtn = document.getElementById('nextBtn');
+        var dotsContainer = document.getElementById('carouselDots');
+        var currentSlide = 0;
+        var totalSlides = slides.length;
+        var carouselInterval;
+
+        // Create dots
+        for (var i = 0; i < totalSlides; i++) {
+            var dot = document.createElement('button');
+            dot.classList.add('dot');
+            dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            if (i === 0) dot.classList.add('active');
+            dot.dataset.index = i;
+            dot.addEventListener('click', function() {
+                goToSlide(parseInt(this.dataset.index));
+                resetAutoSlide();
+            });
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateDots() {
+            dotsContainer.querySelectorAll('.dot').forEach(function(d, idx) {
+                d.classList.toggle('active', idx === currentSlide);
+            });
+        }
+
+        function goToSlide(index) {
+            if (index >= totalSlides) index = 0;
+            if (index < 0) index = totalSlides - 1;
+            currentSlide = index;
+            carouselTrack.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+            updateDots();
+        }
+
+        nextBtn.addEventListener('click', function() {
+            goToSlide(currentSlide + 1);
+            resetAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', function() {
+            goToSlide(currentSlide - 1);
+            resetAutoSlide();
+        });
+
+        function startAutoSlide() {
+            carouselInterval = setInterval(function() {
+                goToSlide(currentSlide + 1);
+            }, 4000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(carouselInterval);
+            startAutoSlide();
+        }
+
+        startAutoSlide();
+
+        // ===== TESTIMONIAL CAROUSEL =====
+        var testimonialTrack = document.getElementById('testimonialTrack');
+        var testimonialCards = testimonialTrack.querySelectorAll('.testimonial-card');
+        var testimonialDotsContainer = document.getElementById('testimonialDots');
+        var currentTestimonial = 0;
+        var totalTestimonials = testimonialCards.length;
+        var testimonialInterval;
+
+        for (var t = 0; t < totalTestimonials; t++) {
+            var tDot = document.createElement('button');
+            tDot.classList.add('testimonial-dot');
+            tDot.setAttribute('aria-label', 'Go to testimonial ' + (t + 1));
+            if (t === 0) tDot.classList.add('active');
+            tDot.dataset.index = t;
+            tDot.addEventListener('click', function() {
+                goToTestimonial(parseInt(this.dataset.index));
+                resetTestimonialAutoSlide();
+            });
+            testimonialDotsContainer.appendChild(tDot);
+        }
+
+        function updateTestimonialDots() {
+            testimonialDotsContainer.querySelectorAll('.testimonial-dot').forEach(function(d, idx) {
+                d.classList.toggle('active', idx === currentTestimonial);
+            });
+        }
+
+        function goToTestimonial(index) {
+            if (index >= totalTestimonials) index = 0;
+            if (index < 0) index = totalTestimonials - 1;
+            currentTestimonial = index;
+            testimonialTrack.style.transform = 'translateX(-' + (currentTestimonial * 100) + '%)';
+            updateTestimonialDots();
+        }
+
+        function startTestimonialAutoSlide() {
+            testimonialInterval = setInterval(function() {
+                goToTestimonial(currentTestimonial + 1);
+            }, 5000);
+        }
+
+        function resetTestimonialAutoSlide() {
+            clearInterval(testimonialInterval);
+            startTestimonialAutoSlide();
+        }
+
+        startTestimonialAutoSlide();
+
+        // ===== SERVICE CARD ACCORDION =====
+        var allServiceCards = document.querySelectorAll('.service-card');
+        allServiceCards.forEach(function(card, idx) {
+            card.setAttribute('data-service-index', idx);
+        });
+
+        document.querySelectorAll('.service-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var clickedCard = e.currentTarget.closest('.service-card');
+                if (!clickedCard) return;
+                var clickedIndex = clickedCard.getAttribute('data-service-index');
+                var isActive = clickedCard.classList.contains('active');
+
+                // Close ALL cards first
+                allServiceCards.forEach(function(card) {
+                    card.classList.remove('active');
+                });
+
+                // Toggle clicked card (open only if it was closed)
+                if (!isActive) {
+                    clickedCard.classList.add('active');
+                }
+            });
+        });
+
+        // ===== ANIMATED STATS COUNTER =====
+        var statsAnimated = false;
+        var statsSection = document.querySelector('.stats-section');
+
+        function animateCounters() {
+            if (statsAnimated) return;
+            var counters = document.querySelectorAll('.stat-number[data-target]');
+            counters.forEach(function(counter) {
+                var target = parseInt(counter.dataset.target);
+                var duration = 2000;
+                var startTime = null;
+
+                function updateCounter(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var progress = Math.min((timestamp - startTime) / duration, 1);
+                    // Ease out cubic
+                    var ease = 1 - Math.pow(1 - progress, 3);
+                    var current = Math.floor(ease * target);
+                    counter.textContent = current.toLocaleString() + (target >= 1000 ? '+' : '+');
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString() + '+';
+                    }
+                }
+                requestAnimationFrame(updateCounter);
+            });
+            statsAnimated = true;
+        }
+
+        var statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // ===== APPOINTMENT FORM =====
+        var appointmentForm = document.getElementById('appointmentForm');
+        var dateInput = document.getElementById('date');
+
+        // Set min date to today
+        var today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        appointmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var data = {};
+            formData.forEach(function(value, key) { data[key] = value; });
+
+            var message = 'New Appointment Request:%0A%0A' +
+                'Name: ' + data.name + '%0A' +
+                'Phone: ' + data.phone + '%0A' +
+                'Treatment: ' + data.treatment + '%0A' +
+                'Preferred Date: ' + data.date + '%0A' +
+                'Message: ' + (data.message || 'N/A');
+
+            window.open('https://wa.me/919270757455?text=' + message, '_blank');
+            alert('Thank you! You will be redirected to WhatsApp to confirm your appointment.');
+            this.reset();
+        });
+
+        // ===== TOUCH SWIPE FOR CAROUSELS =====
+        function addSwipe(trackElement, goFn, resetFn) {
+            var startX = 0;
+            var endX = 0;
+            var container = trackElement.parentElement;
+
+            container.addEventListener('touchstart', function(e) {
+                startX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            container.addEventListener('touchend', function(e) {
+                endX = e.changedTouches[0].screenX;
+                var diff = startX - endX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        goFn(1);
+                    } else {
+                        goFn(-1);
+                    }
+                    if (resetFn) resetFn();
+                }
+            }, { passive: true });
+        }
+
+        addSwipe(carouselTrack, function(dir) {
+            goToSlide(currentSlide + dir);
+        }, resetAutoSlide);
+
+        addSwipe(testimonialTrack, function(dir) {
+            goToTestimonial(currentTestimonial + dir);
+        }, resetTestimonialAutoSlide);
+
+    })();
+
+    // FAQ Toggle (global for inline onclick)
+    function toggleFaq(element) {
+        var faqItem = element.parentElement;
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            if (item !== faqItem) item.classList.remove('active');
+        });
+        faqItem.classList.toggle('active');
+    }
+    </script>
+
+</body>
+</html>
